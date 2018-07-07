@@ -17,7 +17,7 @@
  * 
  */
 
-dp.sh.Brushes.Lua = function() {
+SyntaxHighlighter.brushes.Lua = function() {
     var functions = 'math\\.\\w+ string\\.\\w+ os\\.\\w+ debug\\.\\w+ io\\.\\w+ error fopen dofile coroutine\\.\\w+ arg ipairs getmetatable loadfile longjmp loadstring rawget print seek rawset assert setmetatable tostring tonumber loadlib';
     var keywords = 'do break end elseif else this function if local nil or not return repeat and until then while';
 
@@ -27,8 +27,8 @@ dp.sh.Brushes.Lua = function() {
         { regex: new RegExp(this.GetKeywords(keywords),  'gm'),                 css: 'keyword'  },
         { regex: new RegExp('--\\[\\[[\\s\\S]*\\]\\]--', 'gm'),                 css: 'comments' },
         { regex: new RegExp('--[^\\[]{2}.*$', 'gm'),                            css: 'comments' }, // one line comments
-        { regex: dp.sh.RegexLib.DoubleQuotedString,                             css: 'string'   }, // strings
-        { regex: dp.sh.RegexLib.SingleQuotedString,                             css: 'string'   }, // strings
+        { regex: SyntaxHighlighter.regexLib.DoubleQuotedString,                 css: 'string'   }, // strings
+        { regex: SyntaxHighlighter.regexLib.SingleQuotedString,                 css: 'string'   }, // strings
         { regex: new RegExp('__sub', 'gm'),                                     css: 'specialfields' }, //special lua field
         { regex: new RegExp('__mul', 'gm'),                                     css: 'specialfields' }, //special lua field
         { regex: new RegExp('__div', 'gm'),                                     css: 'specialfields' }, //special lua field
@@ -51,6 +51,6 @@ dp.sh.Brushes.Lua = function() {
                     '.dp-lua .specialfields { color: #880000; }';
 }
 
-dp.sh.Brushes.Lua.prototype	= new dp.sh.Highlighter();
-dp.sh.Brushes.Lua.Aliases = ['lua'];
+SyntaxHighlighter.brushes.Lua.prototype	= new SyntaxHighlighter.Highlighter();
+SyntaxHighlighter.brushes.Lua.Aliases = ['lua'];
                                                         
